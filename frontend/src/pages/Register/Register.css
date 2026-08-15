@@ -1,0 +1,53 @@
+.register-card {
+    max-width: 480px;
+}
+
+.register-card h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.form-group select:focus {
+    border-color: #8b5cf6;
+
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.terms {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    font-size: 14px;
+
+    color: #666;
+}
+
+.terms input {
+    margin-top: 4px;
+
+    accent-color: #8b5cf6;
+}

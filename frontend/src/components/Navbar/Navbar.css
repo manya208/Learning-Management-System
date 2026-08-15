@@ -1,0 +1,25 @@
+.nav-link{
+
+    color:#444 !important;
+
+    font-weight:500;
+
+    margin-right:18px;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:var(--primary) !important;
+
+}
+
+.navbar-brand{
+    color: var(--primary) !important;
+}
+
+.navbar{
+    background: white !important;
+}

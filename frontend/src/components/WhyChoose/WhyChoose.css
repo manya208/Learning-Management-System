@@ -1,0 +1,57 @@
+.whyChoose{
+
+    padding:90px 0;
+
+    background:white;
+
+}
+
+.why-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    transition:.3s;
+
+    height:100%;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(139,92,246,.18);
+
+}
+
+.why-icon{
+
+    font-size:50px;
+
+    color:#8B5CF6;
+
+    margin-bottom:20px;
+
+}
+
+.why-card h4{
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.why-card p{
+
+    color:#666;
+
+}

@@ -1,0 +1,33 @@
+.featured{
+
+    padding:80px 0;
+
+    background:#f8f9fa;
+
+}
+
+.card{
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(139,92,246,.20);
+
+}
+
+.card img{
+
+    height:220px;
+
+    object-fit:cover;
+
+}
