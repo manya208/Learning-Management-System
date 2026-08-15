@@ -8,12 +8,12 @@ function Navbar() {
         <a className="navbar-brand fw-bold fs-3" href="/">
   <i
     className="bi bi-mortarboard-fill me-2"
-    style={{ color: "#6C3BFF" }}
+    style={{ color:"#4F817A" }}
   ></i>
 
   <span
     style={{
-      background: "linear-gradient(90deg, #6C3BFF, #9B5DE5)",
+      background: "linear-gradient(90deg, #4F817A, #bdf3d9)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
     }}

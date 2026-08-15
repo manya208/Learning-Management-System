@@ -1,36 +1,70 @@
+/* =========================================
+   CREATE COURSE PAGE
+   ========================================= */
+
 .create-course-page {
     min-height: 100vh;
-    background: #f7f5fb;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(79, 129, 122, 0.055),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(226, 137, 111, 0.045),
+            transparent 25%
+        ),
+        #f7f8f6;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
 
-/* NAVBAR */
+/* =========================================
+   NAVBAR
+   ========================================= */
 
 .create-course-navbar {
     height: 70px;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.78);
 
-    border-bottom: 1px solid #eee;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(79, 129, 122, 0.10);
 
     display: flex;
+
     align-items: center;
 
     padding: 0 30px;
 
     gap: 30px;
+
+    position: relative;
+
+    z-index: 5;
 }
+
 
 .create-course-brand {
-    color: #6d28d9;
+    color: #4f817a;
 
     font-size: 23px;
+
     font-weight: 700;
 }
+
 
 .create-course-brand i {
     margin-right: 8px;
 }
+
 
 .create-course-nav-title {
     flex: 1;
@@ -38,25 +72,41 @@
     color: #555;
 
     font-size: 15px;
+
     font-weight: 600;
 }
 
+
 .back-dashboard {
-    color: #7c3aed;
+    color: #4f817a;
 
     text-decoration: none;
 
     font-size: 13px;
 
     font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.back-dashboard:hover {
+    color: #d47d65;
+
+    transform: translateX(-3px);
+}
+
 
 .back-dashboard i {
     margin-right: 7px;
 }
 
 
-/* CONTAINER */
+/* =========================================
+   CONTAINER
+   ========================================= */
 
 .create-course-container {
     max-width: 1000px;
@@ -64,25 +114,35 @@
     margin: auto;
 
     padding: 45px 25px 70px;
+
+    position: relative;
+
+    z-index: 2;
 }
+
 
 .create-course-heading {
     margin-bottom: 30px;
 }
 
+
 .create-course-heading span {
-    color: #8b5cf6;
+    color: #4f817a;
 
     font-size: 13px;
 
     font-weight: 700;
 }
 
+
 .create-course-heading h1 {
     margin: 5px 0;
 
     font-size: 31px;
+
+    color: #29312f;
 }
+
 
 .create-course-heading p {
     color: #888;
@@ -91,22 +151,42 @@
 }
 
 
-/* CARD */
+/* =========================================
+   FORM CARD
+   ========================================= */
 
 .create-course-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.62);
 
-    border-radius: 15px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.82);
+
+    border-radius: 17px;
 
     padding: 28px;
 
     margin-bottom: 22px;
 
-    box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+    box-shadow:
+        0 8px 25px rgba(35, 55, 51, 0.055);
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
 
-/* SECTION HEADING */
+.create-course-card:hover {
+    box-shadow:
+        0 12px 30px rgba(35, 55, 51, 0.075);
+}
+
+
+/* =========================================
+   SECTION HEADING
+   ========================================= */
 
 .form-section-heading {
     display: flex;
@@ -118,29 +198,46 @@
     margin-bottom: 25px;
 }
 
+
 .form-section-icon {
     width: 42px;
     height: 42px;
 
-    background: #eee7ff;
+    background: rgba(79, 129, 122, 0.10);
 
-    color: #8b5cf6;
+    color: #4f817a;
 
     border-radius: 10px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-size: 18px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
+
+
+.form-section-heading:hover .form-section-icon {
+    transform: translateY(-2px) rotate(-3deg);
+
+    background: rgba(79, 129, 122, 0.15);
+}
+
 
 .form-section-heading h2 {
     font-size: 19px;
 
     margin: 0;
+
+    color: #29312f;
 }
+
 
 .form-section-heading p {
     color: #999;
@@ -151,7 +248,9 @@
 }
 
 
-/* FORM */
+/* =========================================
+   FORM
+   ========================================= */
 
 .form-grid {
     display: grid;
@@ -161,6 +260,7 @@
     gap: 20px;
 }
 
+
 .form-group {
     display: flex;
 
@@ -169,9 +269,11 @@
     gap: 7px;
 }
 
+
 .form-group.full-width {
     grid-column: 1 / -1;
 }
+
 
 .form-group label {
     color: #444;
@@ -181,6 +283,7 @@
     font-weight: 600;
 }
 
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -188,9 +291,9 @@
 
     box-sizing: border-box;
 
-    border: 1px solid #ddd8e6;
+    border: 1px solid #d8e0de;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     padding: 11px 13px;
 
@@ -200,45 +303,70 @@
 
     outline: none;
 
-    transition: 0.2s;
+    background: rgba(255, 255, 255, 0.68);
+
+    color: #29312f;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
+
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #b8ccc8;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4f817a;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 129, 122, 0.10);
+}
+
 
 .form-group textarea {
     resize: vertical;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #8b5cf6;
 
-    box-shadow: 0 0 0 3px #eee7ff;
-}
-
-
-/* PRICE */
+/* =========================================
+   PRICE
+   ========================================= */
 
 .price-input {
     display: flex;
 
     align-items: center;
 
-    border: 1px solid #ddd8e6;
+    border: 1px solid #d8e0de;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.68);
 }
 
-.price-input span {
-    background: #f5f2fa;
 
-    color: #777;
+.price-input span {
+    background: rgba(79, 129, 122, 0.07);
+
+    color: #687571;
 
     padding: 11px 13px;
 
     font-size: 13px;
 }
+
 
 .price-input input {
     border: none;
@@ -246,17 +374,24 @@
     border-radius: 0;
 
     flex: 1;
+
+    background: transparent;
 }
+
 
 .price-input input:focus {
     box-shadow: none;
+
+    outline: none;
 }
 
 
-/* THUMBNAIL */
+/* =========================================
+   THUMBNAIL
+   ========================================= */
 
 .thumbnail-upload {
-    border: 2px dashed #d9d0e5;
+    border: 2px dashed #bfd1cd;
 
     border-radius: 13px;
 
@@ -264,20 +399,39 @@
 
     text-align: center;
 
-    background: #fcfbfe;
+    background: rgba(255, 255, 255, 0.42);
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
+
+.thumbnail-upload:hover {
+    border-color: #8bb8b1;
+
+    background: rgba(255, 255, 255, 0.62);
+
+    transform: translateY(-2px);
+}
+
+
 .thumbnail-upload > i {
-    color: #8b5cf6;
+    color: #4f817a;
 
     font-size: 40px;
 }
+
 
 .thumbnail-upload h3 {
     margin: 12px 0 5px;
 
     font-size: 16px;
+
+    color: #29312f;
 }
+
 
 .thumbnail-upload p {
     color: #999;
@@ -287,12 +441,13 @@
     margin-bottom: 18px;
 }
 
+
 .upload-btn {
     display: inline-block;
 
-    background: #eee7ff;
+    background: rgba(79, 129, 122, 0.10);
 
-    color: #6d28d9;
+    color: #4f817a;
 
     padding: 9px 16px;
 
@@ -303,10 +458,23 @@
     font-weight: 600;
 
     cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 
-/* LESSONS */
+.upload-btn:hover {
+    background: rgba(79, 129, 122, 0.16);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LESSONS
+   ========================================= */
 
 .lessons-list {
     display: flex;
@@ -316,19 +484,36 @@
     gap: 12px;
 }
 
+
 .lesson-editor {
     display: flex;
 
     gap: 12px;
 
-    border: 1px solid #e5e0eb;
+    border: 1px solid #dce4e2;
 
     border-radius: 11px;
 
     padding: 15px;
 
-    background: #fcfbfe;
+    background: rgba(255, 255, 255, 0.48);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.lesson-editor:hover {
+    border-color: rgba(79, 129, 122, 0.25);
+
+    box-shadow:
+        0 7px 18px rgba(35, 55, 51, 0.05);
+
+    transform: translateY(-2px);
+}
+
 
 .lesson-number {
     width: 34px;
@@ -336,13 +521,14 @@
 
     border-radius: 8px;
 
-    background: #8b5cf6;
+    background: #4f817a;
 
     color: white;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-size: 13px;
@@ -352,9 +538,11 @@
     flex-shrink: 0;
 }
 
+
 .lesson-fields {
     flex: 1;
 }
+
 
 .lesson-title-row {
     display: flex;
@@ -362,10 +550,11 @@
     gap: 10px;
 }
 
+
 .lesson-title-row input {
     flex: 1;
 
-    border: 1px solid #ddd8e6;
+    border: 1px solid #d8e0de;
 
     border-radius: 7px;
 
@@ -374,21 +563,48 @@
     outline: none;
 
     font-size: 13px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+
+.lesson-title-row input:focus {
+    border-color: #4f817a;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 129, 122, 0.08);
+}
+
 
 .remove-lesson {
     width: 38px;
 
     border: none;
 
-    background: #fff0f0;
+    background: #fff0ee;
 
-    color: #dc2626;
+    color: #d35f4e;
 
     border-radius: 7px;
 
     cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.remove-lesson:hover {
+    background: #ffe2de;
+
+    transform: scale(1.04);
+}
+
 
 .lesson-extra-fields {
     display: flex;
@@ -398,9 +614,10 @@
     margin-top: 10px;
 }
 
+
 .lesson-extra-fields select,
 .lesson-extra-fields input {
-    border: 1px solid #ddd8e6;
+    border: 1px solid #d8e0de;
 
     border-radius: 7px;
 
@@ -409,22 +626,29 @@
     font-size: 11px;
 
     outline: none;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    color: #555;
 }
+
 
 .lesson-extra-fields select {
     width: 110px;
 }
 
+
 .lesson-extra-fields input {
     width: 160px;
 }
 
+
 .add-content-btn {
-    border: 1px solid #d7cbea;
+    border: 1px solid #bfd1cd;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.65);
 
-    color: #7c3aed;
+    color: #4f817a;
 
     border-radius: 7px;
 
@@ -433,11 +657,24 @@
     font-size: 11px;
 
     cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.add-content-btn:hover {
+    background: rgba(79, 129, 122, 0.08);
+
+    transform: translateY(-1px);
+}
+
 
 .add-content-btn i {
     margin-right: 4px;
 }
+
 
 .add-lesson-btn {
     margin-top: 15px;
@@ -446,28 +683,42 @@
 
     background: transparent;
 
-    color: #7c3aed;
+    color: #4f817a;
 
     font-size: 12px;
 
     font-weight: 600;
 
     cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.add-lesson-btn:hover {
+    color: #d47d65;
+
+    transform: translateX(3px);
+}
+
 
 .add-lesson-btn i {
     margin-right: 6px;
 }
 
 
-/* PUBLISH */
+/* =========================================
+   PUBLISH
+   ========================================= */
 
 .publish-section {
-    background: #24183f;
+    background: #263b38;
 
     color: white;
 
-    border-radius: 15px;
+    border-radius: 17px;
 
     padding: 25px;
 
@@ -478,7 +729,52 @@
     justify-content: space-between;
 
     gap: 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(35, 55, 51, 0.12);
 }
+
+
+/* Subtle moving shape */
+
+.publish-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: rgba(139, 184, 177, 0.05);
+
+    right: -70px;
+    top: -90px;
+
+    animation: publishFloat 9s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes publishFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-20px, 20px);
+    }
+
+}
+
 
 .publish-section h3 {
     margin: 0 0 5px;
@@ -486,8 +782,9 @@
     font-size: 18px;
 }
 
+
 .publish-section p {
-    color: #bdb4c9;
+    color: #b9c8c4;
 
     font-size: 12px;
 
@@ -496,13 +793,19 @@
     max-width: 500px;
 }
 
+
 .publish-actions {
     display: flex;
 
     gap: 10px;
 
     flex-shrink: 0;
+
+    position: relative;
+
+    z-index: 2;
 }
+
 
 .save-draft-btn,
 .publish-btn {
@@ -515,34 +818,57 @@
     font-weight: 600;
 
     cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
+
 .save-draft-btn {
-    border: 1px solid #8e849c;
+    border: 1px solid #71817d;
 
     background: transparent;
 
     color: white;
 }
 
+
+.save-draft-btn:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    transform: translateY(-2px);
+}
+
+
 .publish-btn {
     border: none;
 
-    background: #a78bfa;
+    background: #8bb8b1;
 
-    color: #24183f;
+    color: #263b38;
 }
+
 
 .publish-btn:hover {
-    background: #c4b5fd;
+    background: #a4c9c3;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(139, 184, 177, 0.18);
 }
+
 
 .publish-btn i {
     margin-right: 6px;
 }
 
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+   ========================================= */
 
 @media (max-width: 700px) {
 

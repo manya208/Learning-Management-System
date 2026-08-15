@@ -1,15 +1,18 @@
 .student-dashboard {
     min-height: 100vh;
-    background: #f7f5fb;
+    background: #f4fbf6;
 }
 
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .student-nav {
     height: 70px;
+
     background: white;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e5e7eb;
 
     display: flex;
     align-items: center;
@@ -18,7 +21,8 @@
 }
 
 .student-logo {
-    color: #8064b8;
+    color: #16a34a;
+
     font-size: 23px;
     font-weight: 700;
 }
@@ -36,12 +40,16 @@
 
 .student-nav-links a {
     text-decoration: none;
+
     color: #666;
+
     font-size: 13px;
+
+    transition: 0.2s;
 }
 
 .student-nav-links a:hover {
-    color: #8064b8;
+    color: #16a34a;
 }
 
 .student-user {
@@ -49,11 +57,13 @@
 
     display: flex;
     align-items: center;
+
     gap: 20px;
 }
 
 .student-user > i {
     color: #666;
+
     font-size: 18px;
 }
 
@@ -63,8 +73,8 @@
 
     border-radius: 50%;
 
-    background: #e9defa;
-    color: #8064b8;
+    background: #dcfce7;
+    color: #15803d;
 
     display: flex;
     align-items: center;
@@ -75,7 +85,9 @@
 }
 
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .student-dashboard-main {
     max-width: 1200px;
@@ -86,7 +98,9 @@
 }
 
 
-/* WELCOME */
+/* =========================
+   WELCOME
+========================= */
 
 .student-welcome {
     display: flex;
@@ -98,9 +112,10 @@
 }
 
 .student-welcome span {
-    color: #8064b8;
+    color: #16a34a;
 
     font-size: 13px;
+
     font-weight: 600;
 }
 
@@ -117,7 +132,7 @@
 }
 
 .browse-course-btn {
-    background: #9b7ac7;
+    background: #16a34a;
 
     color: white;
 
@@ -128,7 +143,16 @@
     border-radius: 8px;
 
     font-size: 12px;
+
     font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.browse-course-btn:hover {
+    background: #15803d;
+
+    color: white;
 }
 
 .browse-course-btn i {
@@ -136,7 +160,9 @@
 }
 
 
-/* STATS */
+/* =========================
+   STATS
+========================= */
 
 .student-stats {
     display: grid;
@@ -156,11 +182,12 @@
     padding: 20px;
 
     display: flex;
+
     align-items: center;
 
     gap: 13px;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
 }
 
 .student-stat-icon {
@@ -169,11 +196,12 @@
 
     border-radius: 10px;
 
-    background: #eee7ff;
+    background: #dcfce7;
 
-    color: #8064b8;
+    color: #16a34a;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -197,7 +225,9 @@
 }
 
 
-/* SECTION */
+/* =========================
+   SECTION
+========================= */
 
 .dashboard-section {
     margin-bottom: 35px;
@@ -227,7 +257,7 @@
 }
 
 .dashboard-section-heading a {
-    color: #8064b8;
+    color: #15803d;
 
     text-decoration: none;
 
@@ -236,12 +266,18 @@
     font-weight: 600;
 }
 
+.dashboard-section-heading a:hover {
+    color: #166534;
+}
+
 .dashboard-section-heading a i {
     margin-left: 5px;
 }
 
 
-/* CONTINUE COURSE */
+/* =========================
+   CONTINUE COURSE
+========================= */
 
 .continue-course {
     background: white;
@@ -252,7 +288,7 @@
 
     display: flex;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
 }
 
 .continue-course img {
@@ -269,7 +305,7 @@
 
 .continue-course-content > span,
 .student-course-content > span {
-    color: #8064b8;
+    color: #16a34a;
 
     font-size: 11px;
 
@@ -288,6 +324,11 @@
     font-size: 12px;
 }
 
+
+/* =========================
+   PROGRESS
+========================= */
+
 .progress-info {
     display: flex;
 
@@ -303,7 +344,7 @@
 .progress-bar {
     height: 7px;
 
-    background: #eee8f5;
+    background: #e5f3e9;
 
     border-radius: 10px;
 
@@ -317,13 +358,15 @@
 
     width: 65%;
 
-    background: #9b7ac7;
+    background: #22c55e;
+
+    border-radius: 10px;
 }
 
 .continue-btn {
     display: inline-block;
 
-    background: #9b7ac7;
+    background: #16a34a;
 
     color: white;
 
@@ -336,6 +379,14 @@
     font-size: 11px;
 
     font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.continue-btn:hover {
+    background: #15803d;
+
+    color: white;
 }
 
 .continue-btn i {
@@ -343,7 +394,9 @@
 }
 
 
-/* COURSE GRID */
+/* =========================
+   COURSE GRID
+========================= */
 
 .student-course-grid {
     display: grid;
@@ -360,11 +413,20 @@
 
     overflow: hidden;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
+}
+
+.student-course-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
 }
 
 .student-course-card img {
     width: 100%;
+
     height: 145px;
 
     object-fit: cover;
@@ -382,10 +444,15 @@
     margin: 5px 0 15px;
 }
 
+
+/* =========================
+   SMALL PROGRESS
+========================= */
+
 .small-progress {
     height: 6px;
 
-    background: #eee8f5;
+    background: #e5f3e9;
 
     border-radius: 10px;
 
@@ -395,7 +462,9 @@
 .small-progress-fill {
     height: 100%;
 
-    background: #9b7ac7;
+    background: #22c55e;
+
+    border-radius: 10px;
 }
 
 .js-progress {
@@ -423,7 +492,9 @@
 }
 
 
-/* BOTTOM */
+/* =========================
+   BOTTOM
+========================= */
 
 .dashboard-bottom-grid {
     display: grid;
@@ -434,7 +505,9 @@
 }
 
 
-/* CERTIFICATES */
+/* =========================
+   CERTIFICATES
+========================= */
 
 .certificate-box,
 .activity-box {
@@ -444,7 +517,7 @@
 
     padding: 22px;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
 }
 
 .certificate-item {
@@ -465,9 +538,9 @@
 
     border-radius: 9px;
 
-    background: #eee7ff;
+    background: #dcfce7;
 
-    color: #8064b8;
+    color: #16a34a;
 
     display: flex;
 
@@ -492,9 +565,9 @@
 
     border: none;
 
-    background: #f2edfa;
+    background: #f0fdf4;
 
-    color: #8064b8;
+    color: #15803d;
 
     border-radius: 6px;
 
@@ -502,10 +575,18 @@
     height: 32px;
 
     cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.certificate-item button:hover {
+    background: #dcfce7;
 }
 
 
-/* ACTIVITY */
+/* =========================
+   ACTIVITY
+========================= */
 
 .student-activity {
     display: flex;
@@ -525,9 +606,9 @@
 
     border-radius: 8px;
 
-    background: #eee7ff;
+    background: #dcfce7;
 
-    color: #8064b8;
+    color: #16a34a;
 
     display: flex;
 
@@ -562,7 +643,9 @@
 }
 
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 900px) {
 
@@ -579,6 +662,7 @@
     }
 
 }
+
 
 @media (max-width: 650px) {
 
@@ -616,6 +700,7 @@
 
     .continue-course img {
         width: 100%;
+
         height: 200px;
     }
 

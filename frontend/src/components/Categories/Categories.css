@@ -1,37 +1,326 @@
-.categories{
+/* =========================================
+   CATEGORIES SECTION
+   Glass + Soft Animated Design
+   ========================================= */
 
-    padding:80px 0;
+.categories {
+    position: relative;
 
-}
+    padding: 90px 0;
 
-.category-card{
+    overflow: hidden;
 
-    background:white;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    padding:40px 20px;
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    cursor:pointer;
-
-}
-
-.category-card:hover{
-
-    transform:translateY(-10px);
-
-     box-shadow:0 18px 40px rgba(139,92,246,.20);
+    background:
+        radial-gradient(
+            circle at 15% 40%,
+            rgba(79, 129, 122, 0.07),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(226, 137, 111, 0.06),
+            transparent 25%
+        );
 
 }
 
-.icon{
 
-    font-size:55px;
+/* =========================================
+   MOVING BACKGROUND SHAPES
+   ========================================= */
 
-    margin-bottom:20px;
+.categories::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(79, 129, 122, 0.06);
+
+    top: 30px;
+    left: -100px;
+
+    border: 1px solid rgba(79, 129, 122, 0.08);
+
+    filter: blur(2px);
+
+    animation: categoryFloatOne 12s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+.categories::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(226, 137, 111, 0.06);
+
+    bottom: -70px;
+    right: -60px;
+
+    border: 1px solid rgba(226, 137, 111, 0.08);
+
+    animation: categoryFloatTwo 14s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BACKGROUND ANIMATIONS
+   ========================================= */
+
+@keyframes categoryFloatOne {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(45px, 25px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+@keyframes categoryFloatTwo {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-35px, -25px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+/* =========================================
+   MAKE CONTENT STAY ABOVE BACKGROUND
+   ========================================= */
+
+.categories .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   CATEGORY CARD
+   ========================================= */
+
+.category-card {
+
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(42, 62, 59, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+
+/* =========================================
+   SMALL GLASS SHINE
+   ========================================= */
+
+.category-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    top: -45px;
+    right: -35px;
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+
+}
+
+
+/* =========================================
+   CARD HOVER
+   ========================================= */
+
+.category-card:hover {
+
+    transform: translateY(-8px);
+
+    background: rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 18px 40px rgba(42, 62, 59, 0.12);
+
+}
+
+
+.category-card:hover::before {
+
+    transform: scale(1.5);
+
+    opacity: 0.7;
+
+}
+
+
+/* =========================================
+   ICON
+   ========================================= */
+
+.icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    color: #4f817a;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* Icon moves slightly on hover */
+
+.category-card:hover .icon {
+
+    transform:
+        translateY(-5px)
+        rotate(-3deg);
+
+    color: #e2896f;
+
+}
+
+
+/* =========================================
+   CARD TEXT
+   ========================================= */
+
+.category-card h5,
+.category-card h4,
+.category-card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #29312f;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.category-card:hover h5,
+.category-card:hover h4,
+.category-card:hover h3 {
+
+    color: #4f817a;
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 576px) {
+
+    .categories {
+
+        padding: 65px 0;
+
+    }
+
+
+    .category-card {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .icon {
+
+        font-size: 45px;
+
+    }
+
+}
+
+
+/* =========================================
+   REDUCE ANIMATION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .categories::before,
+    .categories::after,
+    .category-card,
+    .category-card::before,
+    .icon {
+
+        animation: none !important;
+
+        transition: none !important;
+
+    }
 
 }

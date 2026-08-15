@@ -1,94 +1,130 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
 
-    --primary:#8B5CF6;
+    --primary: #16A34A;
 
-    --primary-dark:#7C3AED;
+    --primary-dark: #15803D;
 
-    --primary-light:#F5F3FF;
+    --primary-light: #DCFCE7;
 
-    --background:#FCFAFF;
+    --background: #F4FBF6;
 
-    --text:#222;
+    --text: #222;
 
 }
 
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     background: var(--background);
+
     color: var(--text);
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-button{
+button {
     border: none;
 }
 
-.section-title{
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
     font-size: 40px;
+
     font-weight: bold;
+
     text-align: center;
+
     margin-bottom: 20px;
 }
 
-.section-subtitle{
+.section-subtitle {
     text-align: center;
+
     color: #666;
+
     margin-bottom: 50px;
 }
 
-/* Custom Buttons */
 
-.purple-btn{
+/* =========================
+   GREEN BUTTONS
+========================= */
 
-    background:#8B5CF6;
-    color:white;
-    border-radius:12px;
-    transition:.3s;
+.purple-btn {
 
-}
+    background: var(--primary);
 
-.purple-btn:hover{
+    color: white;
 
-    background:#7C3AED;
-    color:white;
+    border-radius: 12px;
 
-}
-
-.purple-outline{
-
-    border:2px solid #8B5CF6;
-    color:#8B5CF6;
-    background:white;
-    border-radius:12px;
-
-}
-
-.purple-outline:hover{
-
-    background:#8B5CF6;
-    color:white;
-
-}
-
-.text-purple{
-    color: #6C3BFF;
-}
-
-.purple-btn,
-.purple-outline {
     transition: all 0.3s ease;
 }
 
-.purple-btn:hover,
-.purple-outline:hover {
+.purple-btn:hover {
+
+    background: var(--primary-dark);
+
+    color: white;
+
     transform: translateY(-3px);
+}
+
+
+/* =========================
+   GREEN OUTLINE BUTTON
+========================= */
+
+.purple-outline {
+
+    border: 2px solid var(--primary);
+
+    color: var(--primary);
+
+    background: white;
+
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+}
+
+.purple-outline:hover {
+
+    background: var(--primary);
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   TEXT COLOR
+========================= */
+
+.text-purple {
+    color: var(--primary);
+}
+
+
+/* =========================
+   BUTTON TRANSITION
+========================= */
+
+.purple-btn,
+.purple-outline {
+
+    transition: all 0.3s ease;
 }

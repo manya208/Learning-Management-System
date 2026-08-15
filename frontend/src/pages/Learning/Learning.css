@@ -1,15 +1,42 @@
+/* =========================================
+   LEARNING PAGE
+   Soft Teal + Glass Design
+   ========================================= */
+
 .learning-page {
     min-height: 100vh;
-    background: #f7f5fb;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(79, 129, 122, 0.07),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(226, 137, 111, 0.06),
+            transparent 25%
+        ),
+        #f7f5ef;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
 
-/* NAVBAR */
+/* =========================================
+   NAVBAR
+   ========================================= */
 
 .learning-navbar {
     height: 70px;
 
-    background: #24183f;
+    background: rgba(49, 92, 87, 0.92);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
     color: white;
 
     display: flex;
@@ -18,30 +45,38 @@
     padding: 0 30px;
 
     gap: 30px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
 .learning-brand {
     font-size: 23px;
+
     font-weight: 700;
 
     color: white;
 }
 
 .learning-brand i {
-    color: #b9a0ff;
+    color: #e6b19e;
+
     margin-right: 8px;
 }
 
 .learning-course-name {
     flex: 1;
 
-    color: #d8d1e5;
+    color: #dce8e5;
 
     font-size: 15px;
 }
 
 .back-dashboard {
     color: white;
+
     text-decoration: none;
 
     padding: 9px 14px;
@@ -52,12 +87,17 @@
 }
 
 .back-dashboard:hover {
-    background: #8b5cf6;
+    background: rgba(255,255,255,0.13);
+
     color: white;
+
+    transform: translateY(-2px);
 }
 
 
-/* LAYOUT */
+/* =========================================
+   LAYOUT
+   ========================================= */
 
 .learning-layout {
     display: grid;
@@ -65,17 +105,27 @@
     grid-template-columns: 1fr 360px;
 
     min-height: calc(100vh - 70px);
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
-/* LESSON CONTENT */
+/* =========================================
+   LESSON CONTENT
+   ========================================= */
 
 .lesson-content {
     padding: 35px 45px;
+
+    position: relative;
 }
 
 
-/* VIDEO */
+/* =========================================
+   VIDEO
+   ========================================= */
 
 .video-container {
     position: relative;
@@ -84,11 +134,14 @@
 
     aspect-ratio: 16 / 9;
 
-    background: #15111f;
+    background: #263936;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
     overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(42, 62, 59, 0.14);
 }
 
 .lesson-video {
@@ -97,20 +150,30 @@
 
     display: block;
 
-    background: #15111f;
+    background: #263936;
 }
 
 
-/* LESSON INFO */
+/* =========================================
+   LESSON INFO
+   ========================================= */
 
 .lesson-info {
-    background: white;
+    background: rgba(255,255,255,0.68);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.8);
 
     margin-top: 25px;
 
     padding: 30px;
 
-    border-radius: 15px;
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(42,62,59,0.06);
 }
 
 .lesson-heading {
@@ -124,7 +187,7 @@
 }
 
 .lesson-label {
-    color: #8b5cf6;
+    color: #4f817a;
 
     font-size: 13px;
 
@@ -135,6 +198,8 @@
     font-size: 27px;
 
     margin: 7px 0 0;
+
+    color: #29312f;
 }
 
 .lesson-duration {
@@ -145,6 +210,8 @@
 
 .lesson-duration i {
     margin-right: 6px;
+
+    color: #4f817a;
 }
 
 .lesson-description {
@@ -156,7 +223,9 @@
 }
 
 
-/* COMPLETE */
+/* =========================================
+   COMPLETE BUTTON
+   ========================================= */
 
 .lesson-actions {
     margin-top: 25px;
@@ -169,7 +238,7 @@
 
     border-radius: 9px;
 
-    background: #8b5cf6;
+    background: #4f817a;
 
     color: white;
 
@@ -181,7 +250,9 @@
 }
 
 .complete-btn:hover {
-    background: #7c3aed;
+    background: #3f706a;
+
+    transform: translateY(-2px);
 }
 
 .complete-btn i {
@@ -189,24 +260,36 @@
 }
 
 .complete-btn.completed {
-    background: #22a06b;
+    background: #3d8b5b;
 }
 
 
-/* NOTES */
+/* =========================================
+   NOTES
+   ========================================= */
 
 .lesson-notes {
-    background: white;
+    background: rgba(255,255,255,0.68);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.8);
 
     margin-top: 25px;
 
     padding: 30px;
 
-    border-radius: 15px;
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(42,62,59,0.06);
 }
 
 .lesson-notes h2 {
     font-size: 21px;
+
+    color: #29312f;
 }
 
 .lesson-notes p {
@@ -220,7 +303,7 @@
 
     resize: vertical;
 
-    border: 1px solid #ddd;
+    border: 1px solid #d9e0dd;
 
     border-radius: 10px;
 
@@ -229,12 +312,17 @@
     outline: none;
 
     margin-top: 10px;
+
+    background: rgba(255,255,255,0.75);
+
+    transition: 0.3s;
 }
 
 .lesson-notes textarea:focus {
-    border-color: #8b5cf6;
+    border-color: #4f817a;
 
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    box-shadow:
+        0 0 0 3px rgba(79,129,122,0.10);
 }
 
 .save-notes-btn {
@@ -242,9 +330,9 @@
 
     border: none;
 
-    background: #eee7ff;
+    background: #dcebe7;
 
-    color: #7c3aed;
+    color: #3f706a;
 
     padding: 10px 18px;
 
@@ -253,20 +341,40 @@
     font-weight: 600;
 
     cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.save-notes-btn:hover {
+    background: #c9dfda;
+
+    transform: translateY(-2px);
 }
 
 
-/* SIDEBAR */
+/* =========================================
+   SIDEBAR
+   ========================================= */
 
 .lesson-sidebar {
-    background: white;
+    background: rgba(255,255,255,0.70);
 
-    border-left: 1px solid #e8e4ee;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-left: 1px solid rgba(79,129,122,0.12);
 
     padding: 25px;
 
     overflow-y: auto;
+
+    position: relative;
 }
+
+
+/* =========================================
+   SIDEBAR HEADER
+   ========================================= */
 
 .sidebar-header {
     display: flex;
@@ -282,6 +390,8 @@
     font-size: 20px;
 
     margin: 0;
+
+    color: #29312f;
 }
 
 .sidebar-header span {
@@ -291,14 +401,18 @@
 }
 
 
-/* PROGRESS */
+/* =========================================
+   PROGRESS
+   ========================================= */
 
 .learning-progress {
-    background: #f8f6fc;
+    background: rgba(220,235,231,0.55);
+
+    border: 1px solid rgba(79,129,122,0.08);
 
     padding: 15px;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     margin-bottom: 20px;
 }
@@ -318,13 +432,13 @@
 }
 
 .progress-text strong {
-    color: #8b5cf6;
+    color: #4f817a;
 }
 
 .progress-track {
     height: 7px;
 
-    background: #e5e1eb;
+    background: #dfe5e2;
 
     border-radius: 10px;
 
@@ -334,7 +448,7 @@
 .progress-fill {
     height: 100%;
 
-    background: #8b5cf6;
+    background: #4f817a;
 
     border-radius: 10px;
 
@@ -342,7 +456,9 @@
 }
 
 
-/* SIDEBAR LESSONS */
+/* =========================================
+   SIDEBAR LESSONS
+   ========================================= */
 
 .lesson-sidebar-list {
     display: flex;
@@ -373,15 +489,17 @@
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
 .sidebar-lesson:hover {
-    background: #f5f1fc;
+    background: rgba(79,129,122,0.07);
+
+    transform: translateX(3px);
 }
 
 .sidebar-lesson.active {
-    background: #eee7ff;
+    background: rgba(79,129,122,0.12);
 }
 
 .lesson-number {
@@ -390,7 +508,7 @@
 
     border-radius: 50%;
 
-    background: #eee;
+    background: #e8e9e7;
 
     color: #777;
 
@@ -405,7 +523,8 @@
 }
 
 .sidebar-lesson.active .lesson-number {
-    background: #8b5cf6;
+    background: #4f817a;
+
     color: white;
 }
 
@@ -437,10 +556,91 @@
 
 .sidebar-lesson-info small i {
     margin-right: 5px;
+
+    color: #4f817a;
 }
 
 
-/* RESPONSIVE */
+/* =========================================
+   MOVING BACKGROUND ELEMENTS
+   ========================================= */
+
+.learning-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(79,129,122,0.055);
+
+    top: 120px;
+    left: -120px;
+
+    animation: learningFloatOne 13s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+.learning-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: rgba(226,137,111,0.055);
+
+    bottom: 80px;
+    right: 280px;
+
+    animation: learningFloatTwo 15s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes learningFloatOne {
+
+    0% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(45px,30px);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+
+}
+
+@keyframes learningFloatTwo {
+
+    0% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(-35px,-25px);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
 
 @media (max-width: 1000px) {
 
@@ -451,7 +651,7 @@
     .lesson-sidebar {
         border-left: none;
 
-        border-top: 1px solid #e8e4ee;
+        border-top: 1px solid rgba(79,129,122,0.12);
 
         max-height: 500px;
     }
@@ -481,6 +681,25 @@
 
     .lesson-heading {
         flex-direction: column;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .learning-page::before,
+    .learning-page::after {
+
+        animation: none !important;
+
+    }
+
+    .sidebar-lesson,
+    .complete-btn,
+    .save-notes-btn {
+
+        transition: none !important;
+
     }
 
 }

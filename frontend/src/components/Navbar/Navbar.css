@@ -1,25 +1,208 @@
-.nav-link{
+/* =========================================
+   EDUVERSE NAVBAR
+   Glass + Transparent Design
+   ========================================= */
 
-    color:#444 !important;
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    font-weight:500;
+    background: rgba(255, 255, 255, 0.72) !important;
 
-    margin-right:18px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    transition:.3s;
+    border-bottom: 1px solid rgba(79, 129, 122, 0.10);
 
+    box-shadow:
+        0 4px 20px rgba(40, 60, 57, 0.05);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.nav-link:hover{
 
-    color:var(--primary) !important;
+/* =========================================
+   LOGO
+   ========================================= */
 
+.navbar-brand {
+    color: #4f817a !important;
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
-.navbar-brand{
-    color: var(--primary) !important;
+.navbar-brand:hover {
+    color: #e2896f !important;
+
+    transform: translateY(-1px);
 }
 
-.navbar{
-    background: white !important;
+
+/* =========================================
+   NAVIGATION LINKS
+   ========================================= */
+
+.nav-link {
+    position: relative;
+
+    color: #444 !important;
+
+    font-weight: 500;
+
+    margin-right: 18px;
+
+    padding: 8px 4px !important;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Small animated line */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 1px;
+
+    width: 0;
+    height: 2px;
+
+    background: #e2896f;
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-link:hover {
+    color: #4f817a !important;
+
+    transform: translateY(-2px);
+}
+
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+   ========================================= */
+
+.navbar .purple-outline {
+    background: rgba(255, 255, 255, 0.35) !important;
+
+    border: 1.5px solid #4f817a !important;
+
+    color: #4f817a !important;
+
+    border-radius: 9px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.navbar .purple-outline:hover {
+    background: rgba(231, 239, 236, 0.75) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(79, 129, 122, 0.12);
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+   ========================================= */
+
+.navbar .purple-btn {
+    background: #4f817a !important;
+
+    border: 1px solid #4f817a !important;
+
+    color: white !important;
+
+    border-radius: 9px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.navbar .purple-btn:hover {
+    background: #3f6d67 !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(79, 129, 122, 0.18);
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+   ========================================= */
+
+.navbar-toggler {
+    border: 1px solid rgba(79, 129, 122, 0.25) !important;
+
+    border-radius: 8px;
+
+    padding: 7px 10px;
+}
+
+
+.navbar-toggler:focus {
+    box-shadow:
+        0 0 0 3px rgba(79, 129, 122, 0.12) !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        padding: 15px 0;
+    }
+
+    .nav-link {
+        margin-right: 0;
+
+        padding: 10px 0 !important;
+    }
+
+    .nav-link::after {
+        bottom: 4px;
+    }
+
+    .navbar .purple-outline,
+    .navbar .purple-btn {
+        margin-top: 8px;
+    }
+
 }

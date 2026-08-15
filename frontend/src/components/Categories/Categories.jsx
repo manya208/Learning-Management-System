@@ -5,23 +5,23 @@ function Categories() {
     const categories = [
 
         {
-            icon:"💻",
-            title:"Web Development"
+            icon: "bi bi-code-slash",
+            title: "Web Development"
         },
 
         {
-            icon:"🤖",
-            title:"Artificial Intelligence"
+            icon: "bi bi-robot",
+            title: "Artificial Intelligence"
         },
 
         {
-            icon:"🔐",
-            title:"Cyber Security"
+            icon: "bi bi-shield-lock",
+            title: "Cyber Security"
         },
 
         {
-            icon:"☁️",
-            title:"Cloud Computing"
+            icon: "bi bi-cloud",
+            title: "Cloud Computing"
         }
 
     ];
@@ -33,46 +33,39 @@ function Categories() {
             <div className="container">
 
                 <h2 className="text-center fw-bold mb-3">
-
                     Popular Categories
-
                 </h2>
 
                 <p className="text-center text-muted mb-5">
-
                     Learn from industry experts and master in-demand skills.
-
                 </p>
 
                 <div className="row">
 
-                    {
+                    {categories.map((category, index) => (
 
-                        categories.map((category,index)=>(
+                        <div
+                            className="col-md-3 mb-4"
+                            key={index}
+                        >
 
-                            <div className="col-md-3 mb-4" key={index}>
+                            <div className="category-card shadow">
 
-                                <div className="category-card shadow">
+                                <div className="icon">
 
-                                    <div className="icon">
-
-                                        {category.icon}
-
-                                    </div>
-
-                                    <h5>
-
-                                        {category.title}
-
-                                    </h5>
+                                    <i className={category.icon}></i>
 
                                 </div>
 
+                                <h5>
+                                    {category.title}
+                                </h5>
+
                             </div>
 
-                        ))
+                        </div>
 
-                    }
+                    ))}
 
                 </div>
 
@@ -81,7 +74,6 @@ function Categories() {
         </section>
 
     );
-
 }
 
 export default Categories;

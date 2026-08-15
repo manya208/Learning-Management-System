@@ -2,36 +2,36 @@ import "./FeaturedCourses.css";
 
 function FeaturedCourses() {
 
-const courses = [
+    const courses = [
 
-    {
-        title: "React Development",
-        instructor: "John Doe",
-        duration: "8 Weeks",
-        rating: "4.8",
-        students: "2,450",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
-    },
+        {
+            title: "React Development",
+            instructor: "John Doe",
+            duration: "8 Weeks",
+            rating: "4.8",
+            students: "2,450",
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
+        },
 
-    {
-        title: "Cyber Security",
-        instructor: "Jasmine",
-        duration: "10 Weeks",
-        rating: "4.9",
-        students: "1,860",
-        image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=600"
-    },
+        {
+            title: "Cyber Security",
+            instructor: "Jasmine",
+            duration: "10 Weeks",
+            rating: "4.9",
+            students: "1,860",
+            image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=600"
+        },
 
-    {
-        title: "Artificial Intelligence",
-        instructor: "David",
-        duration: "12 Weeks",
-        rating: "5.0",
-        students: "3,120",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600"
-    }
+        {
+            title: "Artificial Intelligence",
+            instructor: "David",
+            duration: "12 Weeks",
+            rating: "5.0",
+            students: "3,120",
+            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600"
+        }
 
-];
+    ];
 
     return (
 
@@ -49,75 +49,80 @@ const courses = [
 
                 <div className="row">
 
-                    {
+                    {courses.map((course, index) => (
 
-                        courses.map((course,index)=>(
+                        <div
+                            className="col-lg-4 mb-4"
+                            key={index}
+                        >
 
-                            <div className="col-lg-4 mb-4" key={index}>
+                            <div className="card h-100">
 
-                                <div className="card shadow border-0 h-100">
+                                <img
+                                    src={course.image}
+                                    className="card-img-top"
+                                    alt={course.title}
+                                />
 
-                                    <img
-                                        src={course.image}
-                                        className="card-img-top"
-                                        alt={course.title}
-                                    />
+                                <div className="card-body">
 
-                                    <div className="card-body">
+                                    <h5 className="card-title fw-bold">
+                                        {course.title}
+                                    </h5>
 
-    <h5 className="fw-bold">{course.title}</h5>
+                                    <p className="text-muted mb-3">
 
-    <p className="text-muted mb-3">
+                                        <i className="bi bi-person-circle me-2"></i>
 
-        <i className="bi bi-person-circle me-2"></i>
+                                        {course.instructor}
 
-        {course.instructor}
+                                    </p>
 
-    </p>
 
-    <div className="d-flex justify-content-between mb-3">
+                                    <div className="d-flex justify-content-between mb-3">
 
-        <span>
+                                        <span>
 
-            <i className="bi bi-clock-fill text-primary me-2"></i>
+                                            <i className="bi bi-clock-fill course-icon me-2"></i>
 
-            {course.duration}
+                                            {course.duration}
 
-        </span>
+                                        </span>
 
-        <span>
 
-            <i className="bi bi-star-fill text-warning me-1"></i>
+                                        <span>
 
-            {course.rating}
+                                            <i className="bi bi-star-fill rating-icon me-1"></i>
 
-        </span>
+                                            {course.rating}
 
-    </div>
+                                        </span>
 
-    <div className="mb-3">
+                                    </div>
 
-        <i className="bi bi-people-fill text-success me-2"></i>
 
-        {course.students} Students
+                                    <div className="mb-3">
 
-    </div>
+                                        <i className="bi bi-people-fill students-icon me-2"></i>
 
-    <button className="btn purple-btn w-100">
+                                        {course.students} Students
 
-        Enroll Now
+                                    </div>
 
-    </button>
 
-</div>
+                                    <button className="btn w-100">
+
+                                        Enroll Now
+
+                                    </button>
 
                                 </div>
 
                             </div>
 
-                        ))
+                        </div>
 
-                    }
+                    ))}
 
                 </div>
 

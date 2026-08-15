@@ -8,6 +8,9 @@
     margin-bottom: 8px;
 }
 
+
+/* SELECT */
+
 .form-group select {
     width: 100%;
 
@@ -27,10 +30,13 @@
 }
 
 .form-group select:focus {
-    border-color: #8b5cf6;
+    border-color: #22c55e;
 
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
+
+
+/* TERMS */
 
 .terms {
     display: flex;
@@ -49,5 +55,27 @@
 .terms input {
     margin-top: 4px;
 
-    accent-color: #8b5cf6;
+    accent-color: #22c55e;
+}
+
+
+/* REGISTER BUTTON */
+
+.register-card .auth-btn {
+    background: #22c55e;
+}
+
+.register-card .auth-btn:hover {
+    background: #16a34a;
+}
+
+
+/* LINKS */
+
+.register-card a {
+    color: #16a34a;
+}
+
+.register-card a:hover {
+    color: #15803d;
 }

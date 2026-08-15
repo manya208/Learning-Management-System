@@ -1,57 +1,420 @@
-.whyChoose{
+/* =========================================
+   WHY CHOOSE US
+   Soft Glass + Natural Animation
+   ========================================= */
 
-    padding:90px 0;
+.whyChoose {
+    position: relative;
 
-    background:white;
+    padding: 90px 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 25%,
+            rgba(79, 129, 122, 0.06),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(226, 137, 111, 0.06),
+            transparent 27%
+        ),
+        #f8f7f2;
+}
+
+
+/* =========================================
+   MOVING BACKGROUND ELEMENTS
+   ========================================= */
+
+.whyChoose::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background: rgba(79, 129, 122, 0.045);
+
+    top: -80px;
+    right: 8%;
+
+    border: 1px solid rgba(79, 129, 122, 0.07);
+
+    filter: blur(2px);
+
+    animation: whyFloatOne 13s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+.whyChoose::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: rgba(226, 137, 111, 0.05);
+
+    bottom: -60px;
+    left: 8%;
+
+    border: 1px solid rgba(226, 137, 111, 0.07);
+
+    animation: whyFloatTwo 15s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BACKGROUND ANIMATION
+   ========================================= */
+
+@keyframes whyFloatOne {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-35px, 30px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 
 }
 
-.why-card{
 
-    background:white;
+@keyframes whyFloatTwo {
 
-    border-radius:20px;
+    0% {
+        transform: translate(0, 0);
+    }
 
-    text-align:center;
+    50% {
+        transform: translate(35px, -25px);
+    }
 
-    padding:35px 25px;
-
-    transition:.3s;
-
-    height:100%;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.05);
-
-}
-
-.why-card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 18px 35px rgba(139,92,246,.18);
+    100% {
+        transform: translate(0, 0);
+    }
 
 }
 
-.why-icon{
 
-    font-size:50px;
+/* =========================================
+   CONTENT ABOVE BACKGROUND
+   ========================================= */
 
-    color:#8B5CF6;
+.whyChoose .container {
+    position: relative;
 
-    margin-bottom:20px;
+    z-index: 2;
+}
+
+
+/* =========================================
+   SECTION HEADING
+   ========================================= */
+
+.whyChoose h2 {
+    color: #29312f;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   WHY CARD
+   ========================================= */
+
+.why-card {
+
+    position: relative;
+
+    height: 100%;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.78);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(42, 62, 59, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+
+/* =========================================
+   GLASS HIGHLIGHT
+   ========================================= */
+
+.why-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.42);
+
+    top: -50px;
+    right: -40px;
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SECOND SMALL SHAPE
+   ========================================= */
+
+.why-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(79, 129, 122, 0.06);
+
+    bottom: -18px;
+    left: -12px;
+
+    transition: transform 0.5s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CARD HOVER
+   ========================================= */
+
+.why-card:hover {
+
+    transform: translateY(-9px);
+
+    background: rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 18px 40px rgba(42, 62, 59, 0.12);
+}
+
+
+.why-card:hover::before {
+
+    transform: scale(1.5);
+
+    opacity: 0.7;
+}
+
+
+.why-card:hover::after {
+
+    transform: scale(1.8);
+}
+
+
+/* =========================================
+   WHY ICON
+   ========================================= */
+
+.why-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(231, 239, 236, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    color: #4f817a;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 7px 18px rgba(42, 62, 59, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================
+   ICON HOVER
+   ========================================= */
+
+.why-card:hover .why-icon {
+
+    transform:
+        translateY(-5px)
+        rotate(-3deg);
+
+    background: rgba(255, 241, 236, 0.75);
+
+    color: #e2896f;
+
+    box-shadow:
+        0 10px 22px rgba(226, 137, 111, 0.12);
+}
+
+
+/* =========================================
+   CARD TITLE
+   ========================================= */
+
+.why-card h4 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-weight: 600;
+
+    color: #29312f;
+
+    margin-bottom: 15px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.why-card:hover h4 {
+
+    color: #4f817a;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+   ========================================= */
+
+.why-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #707a77;
+
+    line-height: 1.6;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 576px) {
+
+    .whyChoose {
+
+        padding: 65px 0;
+
+    }
+
+
+    .why-card {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .why-icon {
+
+        width: 62px;
+        height: 62px;
+
+        font-size: 29px;
+
+        border-radius: 16px;
+
+    }
 
 }
 
-.why-card h4{
 
-    font-weight:600;
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
 
-    margin-bottom:15px;
+@media (prefers-reduced-motion: reduce) {
 
-}
+    .whyChoose::before,
+    .whyChoose::after,
+    .why-card,
+    .why-card::before,
+    .why-card::after,
+    .why-icon,
+    .why-card h4 {
 
-.why-card p{
+        animation: none !important;
 
-    color:#666;
+        transition: none !important;
+
+    }
 
 }

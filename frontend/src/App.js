@@ -8,6 +8,7 @@ import WhyChoose from "./components/WhyChoose/WhyChoose";
 import Statistics from "./components/Statistics/Statistics";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
+
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
@@ -20,6 +21,8 @@ import Certificate from "./pages/Certificate/Certificate";
 import Profile from "./pages/Profile/Profile";
 import InstructorDashboard from "./pages/InstructorDashboard/InstructorDashboard";
 import CreateCourse from "./pages/CreateCourse/CreateCourse";
+import Dashboard from "./pages/Dashboard/Dashboard";
+
 
 function Home() {
   return (
@@ -36,71 +39,58 @@ function Home() {
   );
 }
 
+
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
+        {/* Landing Page */}
         <Route path="/" element={<Home />} />
 
+        {/* Authentication */}
         <Route path="/login" element={<Login />} />
-
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
+        {/* Dashboards */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route
-  path="/forgot-password"
-  element={<ForgotPassword />}
-/>
+          path="/instructor-dashboard"
+          element={<InstructorDashboard />}
+        />
 
-<Route
-  path="/reset-password"
-  element={<ResetPassword />}
-/>
+        {/* Courses */}
+        <Route path="/course/:id" element={<CourseDetails />} />
+        <Route
+          path="/instructor/create-course"
+          element={<CreateCourse />}
+        />
 
-<Route
-  path="/student-dashboard"
-  element={<StudentDashboard />}
-/>
+        {/* Learning */}
+        <Route
+          path="/learning/:courseId"
+          element={<Learning />}
+        />
 
-<Route
-  path="/course/:id"
-  element={<CourseDetails />}
-/>
+        {/* Quiz */}
+        <Route
+          path="/quiz/:courseId"
+          element={<Quiz />}
+        />
 
-<Route
-  path="/learning/:courseId"
-  element={<Learning />}
-/>
+        {/* Certificate */}
+        <Route
+          path="/certificate/:courseId"
+          element={<Certificate />}
+        />
 
-<Route
-  path="/quiz/:courseId"
-  element={<Quiz />}
-/>
-
-<Route
-  path="/certificate/:courseId"
-  element={<Certificate />}
-/>
-
-<Route
-  path="/profile"
-  element={<Profile />}
-/>
-
-<Route
-  path="/instructor-dashboard"
-  element={<InstructorDashboard />}
-/>
-
-<Route
-  path="/instructor/create-course"
-  element={<CreateCourse />}
-/>
-
+        {/* Profile */}
+        <Route path="/profile" element={<Profile />} />
 
       </Routes>
-
     </BrowserRouter>
   );
 }

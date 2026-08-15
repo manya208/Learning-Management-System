@@ -1,125 +1,208 @@
+/* =====================================================
+   HERO SECTION
+   EduVerse - Custom Animated Design
+   ===================================================== */
+
 .hero {
-    background: #fcfaff;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(91, 145, 138, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(226, 137, 111, 0.10),
+            transparent 28%
+        ),
+        #f8f7f2;
+
     padding: 90px 0;
     min-height: 650px;
+
     display: flex;
     align-items: center;
 }
 
-/* LEFT SIDE */
+
+/* =====================================================
+   ANIMATED BACKGROUND SHAPES
+   ===================================================== */
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    filter: blur(2px);
+}
+
+
+/* Large transparent teal shape */
+
+.hero::before {
+    width: 360px;
+    height: 360px;
+
+    background: rgba(91, 145, 138, 0.08);
+
+    top: -150px;
+    right: -80px;
+
+    border: 1px solid rgba(91, 145, 138, 0.10);
+
+    animation: backgroundFloatOne 12s ease-in-out infinite;
+}
+
+
+/* Large transparent coral shape */
+
+.hero::after {
+    width: 280px;
+    height: 280px;
+
+    background: rgba(226, 137, 111, 0.07);
+
+    bottom: -130px;
+    left: -80px;
+
+    border: 1px solid rgba(226, 137, 111, 0.10);
+
+    animation: backgroundFloatTwo 15s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   BACKGROUND MOVEMENT
+   ===================================================== */
+
+@keyframes backgroundFloatOne {
+
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-35px, 30px) rotate(12deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+}
+
+
+@keyframes backgroundFloatTwo {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(35px, -25px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+/* =====================================================
+   CONTENT POSITION
+   ===================================================== */
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   LEFT SIDE
+   ===================================================== */
 
 .hero h1 {
     font-size: 58px;
     line-height: 1.15;
     font-weight: 700;
-    color: #222;
+
+    color: #252a29;
+
+    letter-spacing: -1.5px;
+
+    animation: heroTextAppear 0.8s ease forwards;
 }
+
 
 .hero .lead {
     font-size: 18px;
     line-height: 1.7;
-    color: #666;
+
+    color: #66716f;
+
     max-width: 650px;
+
+    animation: heroTextAppear 1s ease forwards;
 }
+
+
+/* =====================================================
+   ACCENT TEXT
+   ===================================================== */
 
 .text-purple {
-    color: #8b5cf6;
+    color: #e2896f !important;
 }
+
+
+/* =====================================================
+   BADGE
+   ===================================================== */
 
 .hero .badge {
-    background: #8b5cf6 !important;
-    padding: 8px 14px;
+    display: inline-block;
+
+    background: #e7efec !important;
+
+    color: #4f817a !important;
+
+    padding: 8px 15px;
+
     font-size: 13px;
+    font-weight: 600;
+
+    border-radius: 20px;
+
+    letter-spacing: 0.2px;
+
+    border: 1px solid rgba(79, 129, 122, 0.12);
+
+    animation:
+        heroTextAppear 0.6s ease forwards,
+        badgeFloat 4s ease-in-out infinite;
 }
 
-/* RIGHT SIDE */
 
-.hero-visual {
-    position: relative;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px 0;
-}
-
-.hero-image {
-    position: relative;
-    z-index: 2;
-
-    width: 100% !important;
-    max-width: 650px !important;
-
-    height: 400px !important;
-
-    object-fit: cover;
-
-    border-radius: 25px !important;
-
-    box-shadow: 0 20px 45px rgba(139, 92, 246, 0.18);
-
-    transition: transform 0.4s ease;
-}
-
-.hero-image:hover {
-    transform: scale(1.02);
-}
-
-/* FLOATING ICONS */
-
-.floating-element {
-    position: absolute;
-
-    width: 62px;
-    height: 62px;
-
-    background: #f3e8ff;
-    color: #8b5cf6;
-
-    border-radius: 17px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 27px;
-
-    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.20);
-
-    z-index: 3;
-
-    animation: floating 4s ease-in-out infinite;
-}
-
-.element-1 {
-    top: 4%;
-    left: 2%;
-}
-
-.element-2 {
-    top: 43%;
-    right: 0;
-    animation-delay: 1s;
-}
-
-.element-3 {
-    bottom: 3%;
-    left: 7%;
-    animation-delay: 2s;
-}
-
-/* FLOATING ANIMATION */
-
-@keyframes floating {
+@keyframes badgeFloat {
 
     0% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-12px);
+        transform: translateY(-3px);
     }
 
     100% {
@@ -128,49 +211,520 @@
 
 }
 
-/* RESPONSIVE */
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.hero .purple-btn {
+    background: #4f817a !important;
+
+    border: 1px solid #4f817a !important;
+
+    color: white !important;
+
+    border-radius: 10px;
+
+    padding: 13px 25px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.hero .purple-btn:hover {
+    background: #3f6d67 !important;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(79, 129, 122, 0.20);
+}
+
+
+.hero .purple-outline {
+    background: rgba(255, 255, 255, 0.45) !important;
+
+    border: 1.5px solid #4f817a !important;
+
+    color: #4f817a !important;
+
+    border-radius: 10px;
+
+    padding: 13px 25px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.hero .purple-outline:hover {
+    background: rgba(231, 239, 236, 0.75) !important;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 22px rgba(79, 129, 122, 0.12);
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+   ===================================================== */
+
+.hero-visual {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px 0;
+
+    animation: visualAppear 0.9s ease forwards;
+}
+
+
+/* =====================================================
+   IMAGE GLASS FRAME
+   ===================================================== */
+
+.hero-image {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100% !important;
+
+    max-width: 650px !important;
+
+    height: 400px !important;
+
+    object-fit: cover;
+
+    border-radius: 25px !important;
+
+    border: 8px solid rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 25px 50px rgba(42, 62, 59, 0.14),
+        0 5px 15px rgba(42, 62, 59, 0.08);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+
+    animation: imageFloat 6s ease-in-out infinite;
+}
+
+
+.hero-image:hover {
+    transform: translateY(-6px) scale(1.015);
+
+    box-shadow:
+        0 30px 60px rgba(42, 62, 59, 0.18);
+}
+
+
+/* =====================================================
+   IMAGE FLOAT
+   ===================================================== */
+
+@keyframes imageFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING ICONS
+   ===================================================== */
+
+.floating-element {
+    position: absolute;
+
+    width: 64px;
+    height: 64px;
+
+    background: rgba(255, 255, 255, 0.42);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #4f817a;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 8px 30px rgba(42, 62, 59, 0.12),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+    z-index: 3;
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+/* =====================================================
+   ICON POSITIONS
+   ===================================================== */
+
+.element-1 {
+    top: 4%;
+    left: 2%;
+
+    animation-delay: 0s;
+}
+
+
+.element-2 {
+    top: 43%;
+    right: 0;
+
+    color: #e2896f;
+
+    animation-delay: 1.5s;
+}
+
+
+.element-3 {
+    bottom: 3%;
+    left: 7%;
+
+    color: #4f817a;
+
+    animation-delay: 3s;
+}
+
+
+/* =====================================================
+   FLOATING ICON ANIMATION
+   ===================================================== */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-7px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA FLOATING LIGHT
+   ===================================================== */
+
+.hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background: rgba(226, 137, 111, 0.10);
+
+    top: 5%;
+    right: 5%;
+
+    filter: blur(10px);
+
+    z-index: 0;
+
+    animation: smallGlow 8s ease-in-out infinite;
+}
+
+
+.hero-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(79, 129, 122, 0.10);
+
+    bottom: 5%;
+    right: 15%;
+
+    filter: blur(8px);
+
+    z-index: 0;
+
+    animation: smallGlow 10s ease-in-out infinite reverse;
+}
+
+
+@keyframes smallGlow {
+
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-15px, 15px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+    }
+
+}
+
+
+/* =====================================================
+   TEXT ENTRY ANIMATION
+   ===================================================== */
+
+@keyframes heroTextAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes visualAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+   ===================================================== */
 
 @media (max-width: 991px) {
 
     .hero {
-        padding: 60px 0;
+        padding: 70px 0;
     }
+
 
     .hero h1 {
         font-size: 45px;
     }
 
+
     .hero-visual {
         min-height: 450px;
+
         margin-top: 40px;
     }
 
+
     .hero-image {
         max-width: 600px !important;
+
         height: 400px !important;
     }
 
 }
 
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+   ===================================================== */
+
 @media (max-width: 576px) {
+
+    .hero {
+        padding: 55px 0;
+
+        min-height: auto;
+    }
+
 
     .hero h1 {
         font-size: 36px;
+
+        letter-spacing: -0.8px;
     }
+
+
+    .hero .lead {
+        font-size: 16px;
+    }
+
 
     .hero-visual {
         min-height: 350px;
+
         padding: 10px;
+
+        margin-top: 25px;
     }
+
 
     .hero-image {
         height: 300px !important;
+
+        border-radius: 20px !important;
+
+        border-width: 5px;
     }
+
 
     .floating-element {
         width: 48px;
+
         height: 48px;
+
         font-size: 20px;
+
+        border-radius: 14px;
+    }
+
+
+    .element-1 {
+        left: 0;
+    }
+
+
+    .element-2 {
+        right: -2px;
+    }
+
+
+    .element-3 {
+        left: 5%;
+    }
+
+
+    .hero .purple-btn,
+    .hero .purple-outline {
+        padding: 11px 17px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE ANIMATION FOR ACCESSIBILITY
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero *,
+    .hero::before,
+    .hero::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+
+.hero-visual {
+    isolation: isolate;
+}
+
+.hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 92%;
+    height: 88%;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 50px rgba(42, 62, 59, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7);
+
+    z-index: 1;
+
+    animation: glassFloat 8s ease-in-out infinite;
+}
+
+@keyframes glassFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 
 }
