@@ -1,54 +1,33 @@
 /* =========================================
    WHY CHOOSE US
-   Soft Glass + Natural Animation
    ========================================= */
 
 .whyChoose {
     position: relative;
-
-    padding: 90px 0;
-
+    padding: 75px 0 55px;
     overflow: hidden;
 
-    background:
-        radial-gradient(
-            circle at 10% 25%,
-            rgba(79, 129, 122, 0.06),
-            transparent 27%
-        ),
-        radial-gradient(
-            circle at 90% 75%,
-            rgba(226, 137, 111, 0.06),
-            transparent 27%
-        ),
-        #f8f7f2;
+    background: #f7f8f6;
 }
 
 
-/* =========================================
-   MOVING BACKGROUND ELEMENTS
-   ========================================= */
+/* Very subtle background glow */
 
 .whyChoose::before {
     content: "";
-
     position: absolute;
 
-    width: 230px;
-    height: 230px;
+    width: 300px;
+    height: 300px;
 
     border-radius: 50%;
 
-    background: rgba(79, 129, 122, 0.045);
+    background: rgba(79, 129, 122, 0.035);
 
-    top: -80px;
-    right: 8%;
+    top: -120px;
+    right: -80px;
 
-    border: 1px solid rgba(79, 129, 122, 0.07);
-
-    filter: blur(2px);
-
-    animation: whyFloatOne 13s ease-in-out infinite;
+    animation: softMove 12s ease-in-out infinite;
 
     pointer-events: none;
 }
@@ -56,89 +35,60 @@
 
 .whyChoose::after {
     content: "";
-
     position: absolute;
 
-    width: 170px;
-    height: 170px;
+    width: 220px;
+    height: 220px;
 
     border-radius: 50%;
 
-    background: rgba(226, 137, 111, 0.05);
+    background: rgba(226, 137, 111, 0.025);
 
-    bottom: -60px;
-    left: 8%;
+    bottom: -100px;
+    left: -60px;
 
-    border: 1px solid rgba(226, 137, 111, 0.07);
-
-    animation: whyFloatTwo 15s ease-in-out infinite;
+    animation: softMoveReverse 15s ease-in-out infinite;
 
     pointer-events: none;
 }
 
 
-/* =========================================
-   BACKGROUND ANIMATION
-   ========================================= */
+@keyframes softMove {
 
-@keyframes whyFloatOne {
-
-    0% {
+    0%, 100% {
         transform: translate(0, 0);
     }
 
     50% {
-        transform: translate(-35px, 30px);
-    }
-
-    100% {
-        transform: translate(0, 0);
+        transform: translate(-25px, 20px);
     }
 
 }
 
 
-@keyframes whyFloatTwo {
+@keyframes softMoveReverse {
 
-    0% {
+    0%, 100% {
         transform: translate(0, 0);
     }
 
     50% {
-        transform: translate(35px, -25px);
-    }
-
-    100% {
-        transform: translate(0, 0);
+        transform: translate(25px, -15px);
     }
 
 }
 
 
-/* =========================================
-   CONTENT ABOVE BACKGROUND
-   ========================================= */
+/* Keep content above background */
 
 .whyChoose .container {
     position: relative;
-
     z-index: 2;
 }
 
 
 /* =========================================
-   SECTION HEADING
-   ========================================= */
-
-.whyChoose h2 {
-    color: #29312f;
-
-    letter-spacing: -0.5px;
-}
-
-
-/* =========================================
-   WHY CARD
+   CARDS
    ========================================= */
 
 .why-card {
@@ -147,21 +97,22 @@
 
     height: 100%;
 
-    padding: 35px 25px;
+    padding: 32px 22px;
 
     text-align: center;
 
-    background: rgba(255, 255, 255, 0.58);
+    /* glass effect */
+    background: rgba(255, 255, 255, 0.52);
 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border: 1px solid rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.8);
 
-    border-radius: 20px;
+    border-radius: 18px;
 
     box-shadow:
-        0 8px 25px rgba(42, 62, 59, 0.06);
+        0 6px 22px rgba(35, 55, 51, 0.055);
 
     overflow: hidden;
 
@@ -172,9 +123,7 @@
 }
 
 
-/* =========================================
-   GLASS HIGHLIGHT
-   ========================================= */
+/* Soft light inside card */
 
 .why-card::before {
 
@@ -187,179 +136,109 @@
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.5);
 
-    top: -50px;
-    right: -40px;
+    top: -55px;
+    right: -45px;
 
-    transition:
-        transform 0.5s ease,
-        opacity 0.5s ease;
+    transition: transform 0.4s ease;
 
     pointer-events: none;
 }
 
-
-/* =========================================
-   SECOND SMALL SHAPE
-   ========================================= */
-
-.why-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 45px;
-    height: 45px;
-
-    border-radius: 50%;
-
-    background: rgba(79, 129, 122, 0.06);
-
-    bottom: -18px;
-    left: -12px;
-
-    transition: transform 0.5s ease;
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   CARD HOVER
-   ========================================= */
 
 .why-card:hover {
 
-    transform: translateY(-9px);
+    transform: translateY(-7px);
 
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.7);
 
     box-shadow:
-        0 18px 40px rgba(42, 62, 59, 0.12);
+        0 14px 32px rgba(35, 55, 51, 0.10);
 }
 
 
 .why-card:hover::before {
 
-    transform: scale(1.5);
+    transform: scale(1.4);
 
-    opacity: 0.7;
-}
-
-
-.why-card:hover::after {
-
-    transform: scale(1.8);
 }
 
 
 /* =========================================
-   WHY ICON
+   ICON
    ========================================= */
 
 .why-icon {
 
     position: relative;
-
     z-index: 2;
 
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
 
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    border-radius: 18px;
+    border-radius: 16px;
 
-    background: rgba(231, 239, 236, 0.72);
-
-    border: 1px solid rgba(255, 255, 255, 0.75);
+    background: rgba(79, 129, 122, 0.08);
 
     color: #4f817a;
 
-    font-size: 34px;
-
-    box-shadow:
-        0 7px 18px rgba(42, 62, 59, 0.07);
+    font-size: 30px;
 
     transition:
-        transform 0.35s ease,
-        color 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-
-/* =========================================
-   ICON HOVER
-   ========================================= */
 
 .why-card:hover .why-icon {
 
-    transform:
-        translateY(-5px)
-        rotate(-3deg);
+    transform: translateY(-4px);
 
-    background: rgba(255, 241, 236, 0.75);
+    background: rgba(226, 137, 111, 0.09);
 
-    color: #e2896f;
-
-    box-shadow:
-        0 10px 22px rgba(226, 137, 111, 0.12);
+    color: #d47d65;
 }
 
 
 /* =========================================
-   CARD TITLE
+   TEXT
    ========================================= */
 
 .why-card h4 {
 
     position: relative;
-
     z-index: 2;
+
+    margin-bottom: 12px;
+
+    font-size: 20px;
 
     font-weight: 600;
 
     color: #29312f;
-
-    margin-bottom: 15px;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
 }
 
-
-.why-card:hover h4 {
-
-    color: #4f817a;
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================================
-   CARD DESCRIPTION
-   ========================================= */
 
 .why-card p {
 
     position: relative;
-
     z-index: 2;
 
-    color: #707a77;
+    margin: 0;
+
+    color: #707976;
+
+    font-size: 15px;
 
     line-height: 1.6;
-
-    margin-bottom: 0;
 }
 
 
@@ -370,51 +249,11 @@
 @media (max-width: 576px) {
 
     .whyChoose {
-
-        padding: 65px 0;
-
+        padding: 60px 0 40px;
     }
-
 
     .why-card {
-
-        padding: 30px 20px;
-
-    }
-
-
-    .why-icon {
-
-        width: 62px;
-        height: 62px;
-
-        font-size: 29px;
-
-        border-radius: 16px;
-
-    }
-
-}
-
-
-/* =========================================
-   ACCESSIBILITY
-   ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .whyChoose::before,
-    .whyChoose::after,
-    .why-card,
-    .why-card::before,
-    .why-card::after,
-    .why-icon,
-    .why-card h4 {
-
-        animation: none !important;
-
-        transition: none !important;
-
+        padding: 28px 18px;
     }
 
 }
